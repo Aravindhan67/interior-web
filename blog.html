@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - LuxeSpace Interiors</title>
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .blog-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+        @media (max-width: 992px) {
+            .blog-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+        .blog-card {
+            background: var(--glass-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+        }
+        .blog-card:hover {
+            box-shadow: var(--shadow-dark);
+            transform: translateY(-5px);
+        }
+        .blog-img {
+            height: 300px;
+            overflow: hidden;
+        }
+        .blog-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s ease;
+        }
+        .blog-card:hover .blog-img img {
+            transform: scale(1.05);
+        }
+        .blog-info {
+            padding: 30px;
+        }
+        .blog-meta {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            display: flex;
+            gap: 15px;
+        }
+        .sidebar-widget {
+            background: var(--glass-bg);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-light);
+        }
+        .search-form {
+            display: flex;
+        }
+        .search-form input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid var(--glass-border);
+            background: transparent;
+            color: var(--text-color);
+            border-radius: 4px 0 0 4px;
+        }
+        .search-form button {
+            padding: 10px 15px;
+            background: var(--primary-color);
+            color: #fff;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+        .category-list li {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .category-list a {
+            display: flex;
+            justify-content: space-between;
+        }
+        .category-list a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .page-link {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--primary-color);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        .page-link:hover, .page-link.active {
+            background: var(--primary-color);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div class="preloader"><div class="loader"></div></div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-couch"></i> LuxeSpace
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="projects.html">Projects</a>
+                <a href="testimonials.html">Testimonials</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="nav-controls">
+                <button class="theme-toggle">🌙</button>
+                <button class="mobile-menu-btn">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header animate-fade-in" style="background-image: linear-gradient(rgba(27, 27, 27, 0.7), rgba(27, 27, 27, 0.7)), url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=1920');">
+        <div class="container">
+            <h1 class="animate-slide-up">Design Insights</h1>
+            <div class="breadcrumb animate-slide-up" style="transition-delay: 0.1s;">
+                <a href="index.html">Home</a> <span>/</span> <span>Blog</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Blog Section -->
+    <section class="blog-section section-padding">
+        <div class="container">
+            <div class="blog-layout">
+                
+                <!-- Main Content -->
+                <div class="blog-main">
+                    <!-- Post 1 -->
+                    <article class="blog-card reveal animate-slide-up">
+                        <div class="blog-img">
+                            <img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&q=80&w=800" alt="Blog 1">
+                        </div>
+                        <div class="blog-info">
+                            <div class="blog-meta">
+                                <span><i class="fas fa-user"></i> Admin</span>
+                                <span><i class="fas fa-calendar"></i> Oct 12, 2026</span>
+                                <span><i class="fas fa-tag"></i> Interior Trends</span>
+                            </div>
+                            <h2>Top 5 Interior Design Trends for 2027</h2>
+                            <p style="margin-bottom: 20px;">Discover the upcoming trends that are reshaping modern living spaces. From sustainable materials to smart home integration, explore what's next in design.</p>
+                            <a href="#" class="btn btn-outline">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Post 2 -->
+                    <article class="blog-card reveal animate-slide-up">
+                        <div class="blog-img">
+                            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=800" alt="Blog 2">
+                        </div>
+                        <div class="blog-info">
+                            <div class="blog-meta">
+                                <span><i class="fas fa-user"></i> Admin</span>
+                                <span><i class="fas fa-calendar"></i> Sep 28, 2026</span>
+                                <span><i class="fas fa-tag"></i> Space Planning</span>
+                            </div>
+                            <h2>Maximizing Space in Urban Apartments</h2>
+                            <p style="margin-bottom: 20px;">Living in a city doesn't mean you have to compromise on style. Learn clever storage solutions and visual tricks to make your apartment feel spacious.</p>
+                            <a href="#" class="btn btn-outline">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Pagination -->
+                    <div class="pagination reveal animate-zoom-in">
+                        <a href="#" class="page-link active">1</a>
+                        <a href="#" class="page-link">2</a>
+                        <a href="#" class="page-link">3</a>
+                        <a href="#" class="page-link"><i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="blog-sidebar reveal animate-slide-left">
+                    <div class="sidebar-widget">
+                        <h3>Search</h3>
+                        <form class="search-form">
+                            <input type="text" placeholder="Search keywords...">
+                            <button type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3>Categories</h3>
+                        <ul class="category-list">
+                            <li><a href="#">Interior Design <span>(12)</span></a></li>
+                            <li><a href="#">Home Decor <span>(8)</span></a></li>
+                            <li><a href="#">Architecture <span>(5)</span></a></li>
+                            <li><a href="#">Space Planning <span>(7)</span></a></li>
+                            <li><a href="#">Furniture Trends <span>(10)</span></a></li>
+                        </ul>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Include -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom"><p>&copy; 2026 LuxeSpace Interiors.</p></div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button class="back-to-top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>

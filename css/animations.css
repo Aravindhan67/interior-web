@@ -1,0 +1,175 @@
+/* Animations CSS */
+
+/* Fade In */
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Slide Up */
+.animate-slide-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-slide-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slide Left */
+.animate-slide-left {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-slide-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Slide Right */
+.animate-slide-right {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-slide-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Zoom In */
+.animate-zoom-in {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-zoom-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Hover Zoom */
+.hover-zoom {
+  overflow: hidden;
+}
+
+.hover-zoom img {
+  transition: transform 0.5s ease;
+}
+
+.hover-zoom:hover img {
+  transform: scale(1.1);
+}
+
+/* Floating Animation */
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Button Ripple */
+.ripple-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Card Lift Animation */
+.card-lift {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card-lift:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-dark);
+}
+
+/* Gradient Background Animation */
+.bg-gradient-anim {
+  background: linear-gradient(-45deg, #C9A66B, #1B1B1B, #333333, #b08d55);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Typing Text Effect */
+.typing-text {
+  overflow: hidden;
+  border-right: .15em solid var(--primary-color);
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--primary-color); }
+}
+
+/* Preloader */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-color);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 3px solid var(--accent-color);
+  border-radius: 50%;
+  border-top-color: var(--primary-color);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

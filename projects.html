@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +17,7 @@
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 40px;
         }
+
         .project-card {
             background: var(--glass-bg);
             border-radius: 10px;
@@ -23,24 +25,29 @@
             box-shadow: var(--shadow-light);
             transition: var(--transition);
         }
+
         .project-card:hover {
             box-shadow: var(--shadow-dark);
             transform: translateY(-10px);
         }
+
         .project-img {
             position: relative;
             height: 250px;
             overflow: hidden;
         }
+
         .project-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: 0.5s ease;
         }
+
         .project-card:hover .project-img img {
             transform: scale(1.1);
         }
+
         .project-badge {
             position: absolute;
             top: 20px;
@@ -53,12 +60,15 @@
             font-weight: 600;
             z-index: 10;
         }
+
         .project-info {
             padding: 25px;
         }
+
         .project-info h3 {
             margin-bottom: 10px;
         }
+
         .project-meta {
             display: flex;
             justify-content: space-between;
@@ -67,16 +77,20 @@
             color: var(--text-color);
             opacity: 0.8;
         }
+
         .project-meta i {
             color: var(--primary-color);
             margin-right: 5px;
         }
     </style>
 </head>
+
 <body>
 
     <!-- Preloader -->
-    <div class="preloader"><div class="loader"></div></div>
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
 
     <!-- Scroll Progress -->
     <div class="scroll-progress"></div>
@@ -105,7 +119,8 @@
     </nav>
 
     <!-- Page Header -->
-    <header class="page-header animate-fade-in" style="background-image: linear-gradient(rgba(27, 27, 27, 0.7), rgba(27, 27, 27, 0.7)), url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=1920');">
+    <header class="page-header animate-fade-in"
+        style="background-image: linear-gradient(rgba(27, 27, 27, 0.7), rgba(27, 27, 27, 0.7)), url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=1920');">
         <div class="container">
             <h1 class="animate-slide-up">Featured Projects</h1>
             <div class="breadcrumb animate-slide-up" style="transition-delay: 0.1s;">
@@ -114,16 +129,41 @@
         </div>
     </header>
 
+    <!-- 360 Virtual Tour Section -->
+    <section class="virtual-tour section-padding" style="background-color: var(--accent-color);">
+        <div class="container">
+            <div class="section-title reveal animate-slide-up">
+                <h2>Interactive 360° Virtual Tours</h2>
+                <p>Experience our designs immersively before they are built.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px;">
+                <div class="tour-container reveal animate-zoom-in" style="border-radius: 15px; overflow: hidden; box-shadow: var(--shadow-dark);">
+                    <iframe width="100%" height="550" frameborder="0" allow="xr-spatial-tracking; gyroscope; accelerometer" allowfullscreen scrolling="no" src="https://kuula.co/share/5GssB?logo=0&info=1&fs=1&vr=0&sd=1&thumbs=1"></iframe>
+                </div>
+                <div class="tour-container reveal animate-zoom-in" style="transition-delay: 0.1s; border-radius: 15px; overflow: hidden; box-shadow: var(--shadow-dark);">
+                    <iframe width="100%" height="550" frameborder="0" allow="xr-spatial-tracking; gyroscope; accelerometer" allowfullscreen scrolling="no" src="https://kuula.co/share/h5Hpv?logo=0&info=1&fs=1&vr=0&sd=1&thumbs=1"></iframe>
+                </div>
+                <div class="tour-container reveal animate-zoom-in" style="transition-delay: 0.2s; border-radius: 15px; overflow: hidden; box-shadow: var(--shadow-dark);">
+                    <iframe width="100%" height="550" frameborder="0" allow="xr-spatial-tracking; gyroscope; accelerometer" allowfullscreen scrolling="no" src="https://kuula.co/share/hzjcg?logo=0&info=1&fs=1&vr=0&sd=1&thumbs=1"></iframe>
+                </div>
+                <div class="tour-container reveal animate-zoom-in" style="transition-delay: 0.3s; border-radius: 15px; overflow: hidden; box-shadow: var(--shadow-dark);">
+                    <iframe width="100%" height="550" frameborder="0" allow="xr-spatial-tracking; gyroscope; accelerometer" allowfullscreen scrolling="no" src="https://kuula.co/share/collection/7fQzw?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Projects List -->
     <section class="projects-list section-padding">
         <div class="container">
             <div class="projects-grid">
-                
+
                 <!-- Project 1 -->
                 <div class="project-card reveal animate-slide-up">
                     <div class="project-img">
                         <span class="project-badge">Completed</span>
-                        <img src="https://images.unsplash.com/photo-1600210491369-e753d80a41f3?auto=format&fit=crop&q=80&w=800" alt="Villa Renovation">
+                        <img src="https://images.unsplash.com/photo-1600210491369-e753d80a41f3?auto=format&fit=crop&q=80&w=800"
+                            alt="Villa Renovation">
                     </div>
                     <div class="project-info">
                         <h3>Beverly Hills Villa</h3>
@@ -131,7 +171,8 @@
                             <span><i class="fas fa-map-marker-alt"></i> California, USA</span>
                             <span><i class="fas fa-clock"></i> 6 Months</span>
                         </div>
-                        <p style="margin-bottom: 20px;">A complete transformation of a 1990s villa into a modern, open-plan luxury residence.</p>
+                        <p style="margin-bottom: 20px;">A complete transformation of a 1990s villa into a modern,
+                            open-plan luxury residence.</p>
                         <a href="#" class="btn btn-outline" style="width: 100%; text-align: center;">View Details</a>
                     </div>
                 </div>
@@ -140,7 +181,8 @@
                 <div class="project-card reveal animate-slide-up" style="transition-delay: 0.1s;">
                     <div class="project-img">
                         <span class="project-badge">In Progress</span>
-                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=800" alt="Tech Office">
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=800"
+                            alt="Tech Office">
                     </div>
                     <div class="project-info">
                         <h3>Nexus Tech HQ</h3>
@@ -148,7 +190,8 @@
                             <span><i class="fas fa-map-marker-alt"></i> London, UK</span>
                             <span><i class="fas fa-clock"></i> 8 Months</span>
                         </div>
-                        <p style="margin-bottom: 20px;">Designing a collaborative and inspiring workspace for an innovative tech startup.</p>
+                        <p style="margin-bottom: 20px;">Designing a collaborative and inspiring workspace for an
+                            innovative tech startup.</p>
                         <a href="#" class="btn btn-outline" style="width: 100%; text-align: center;">View Details</a>
                     </div>
                 </div>
@@ -157,7 +200,8 @@
                 <div class="project-card reveal animate-slide-up" style="transition-delay: 0.2s;">
                     <div class="project-img">
                         <span class="project-badge">Completed</span>
-                        <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=800" alt="Penthouse Kitchen">
+                        <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=800"
+                            alt="Penthouse Kitchen">
                     </div>
                     <div class="project-info">
                         <h3>Manhattan Penthouse</h3>
@@ -165,7 +209,8 @@
                             <span><i class="fas fa-map-marker-alt"></i> New York, USA</span>
                             <span><i class="fas fa-clock"></i> 3 Months</span>
                         </div>
-                        <p style="margin-bottom: 20px;">Redesigning a luxury penthouse kitchen with state-of-the-art appliances and smart storage.</p>
+                        <p style="margin-bottom: 20px;">Redesigning a luxury penthouse kitchen with state-of-the-art
+                            appliances and smart storage.</p>
                         <a href="#" class="btn btn-outline" style="width: 100%; text-align: center;">View Details</a>
                     </div>
                 </div>
@@ -177,7 +222,9 @@
     <!-- Footer Include -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-bottom"><p>&copy; 2026 LuxeSpace Interiors.</p></div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 LuxeSpace Interiors.</p>
+            </div>
         </div>
     </footer>
 
@@ -187,4 +234,5 @@
     <!-- Scripts -->
     <script src="js/main.js"></script>
 </body>
+
 </html>
